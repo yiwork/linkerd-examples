@@ -44,6 +44,7 @@ services:
       - MESOS_SWITCH_USER=0
       - MESOS_CONTAINERIZERS=docker,mesos
       - MESOS_DOCKER_MESOS_IMAGE=xdotai/mesos-slave
+      - MESOS_SYSTEMD_ENABLE_SUPPORT=false
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup
       - /var/run/docker.sock:/run/docker.sock
