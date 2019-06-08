@@ -8,7 +8,9 @@ services:
       - 2181:2181
 
   mesos-leader:
-    image: xdotai/mesos-master:latest
+    build:
+      context: ./
+      dockerfile: leader.Dockerfile
     ports:
       - 5050:5050
     depends_on: 
@@ -24,7 +26,9 @@ services:
       - MESOS_REGISTRY=in_memory
 
   mesos-agent:
-    image: xdotai/mesos-slave
+    build:
+      context: ./
+      dockerfile: slave.Dockerfile
     ports:
       - 5051:5051
     depends_on:
