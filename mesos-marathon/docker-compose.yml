@@ -51,10 +51,11 @@ services:
       - /usr/local/bin/docker:/bin/docker
     command: --resources='ports:[3000-9990,31000-32000]'
 
-#  marathon:
-#    image: mesosphere/marathon:v1.3.0
-#    ports:
-#      - 8080:8080
-#    depends_on:
-#      - zookeeper
-#    command: --master zk://zookeeper:2181/mesos --zk zk://zookeeper:2181/marathon --hostname $DOCKER_IP
+  marathon:
+    image: mesosphere/marathon:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - zookeeper
+      - mesos-leader
+    command: --master zk://zookeeper:2181/mesos --zk zk://zookeeper:2181/marathon --hostname $DOCKER_IP
