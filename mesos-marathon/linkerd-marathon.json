@@ -3,12 +3,10 @@
   "instances": 1,
   "cpus": 0.25,
   "mem": 256.0,
-  "acceptedResourceRoles": ["*", "slave_public"],
-  "constraints": [["hostname", "UNIQUE"]],
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "buoyantio/linkerd:1.4.6",
+      "image": "buoyantio/linkerd:1.6.3",
       "network": "HOST",
       "privileged": true
     }
@@ -35,6 +33,5 @@
       "name": "proxy"
     }
   ],
-  "requirePorts": true,
-  "cmd": "echo \"{\\\"admin\\\":{\\\"ip\\\":\\\"0.0.0.0\\\",\\\"port\\\":9990},\\\"telemetry\\\":[{\\\"kind\\\":\\\"io.l5d.prometheus\\\"}],\\\"namers\\\":[{\\\"kind\\\":\\\"io.l5d.marathon\\\",\\\"host\\\":\\\"localhost\\\",\\\"port\\\":8080}],\\\"routers\\\":[{\\\"protocol\\\":\\\"http\\\",\\\"servers\\\":[{\\\"port\\\":4140,\\\"ip\\\":\\\"0.0.0.0\\\"}],\\\"dtab\\\":\\\"/marathonId=>/#/io.l5d.marathon;/svc=>/$/io.buoyant.http.domainToPathPfx/marathonId;\\\",\\\"label\\\":\\\"linkerd_proxy\\\"}]}\" | /io.buoyant/linkerd/1.4.6/bundle-exec -log.level=DEBUG -- -"
+  "requirePorts": true
 }
