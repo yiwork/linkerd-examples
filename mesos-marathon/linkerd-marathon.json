@@ -8,7 +8,8 @@
     "docker": {
       "image": "buoyantio/linkerd:1.6.3",
       "network": "HOST",
-      "privileged": true
+      "privileged": true, 
+      "forcePullImage": true
     }
   },
   "healthChecks": [
