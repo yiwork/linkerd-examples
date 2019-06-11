@@ -2,7 +2,7 @@
   "id": "linkerd",
   "instances": 1,
   "cpus": 0.25,
-  "mem": 256.0,
+  "mem": 32.0,
   "container": {
     "type": "DOCKER",
     "docker": {
@@ -32,6 +32,7 @@
       "protocol": "tcp",
       "name": "proxy"
     }
-  ],
-  "requirePorts": true
+  ], 
+  "requirePorts": true,
+  "cmd": "cat /config.yml | /io.buoyant/linkerd/1.4.6/bundle-exec -log.level=DEBUG -- -"
 }
