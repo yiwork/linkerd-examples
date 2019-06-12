@@ -14,7 +14,7 @@ usage:
 
 namers:
 - kind: io.l5d.marathon
-  host: localhost
+  host: 10.0.31.121
   port: 8080
 
 routers:
@@ -23,6 +23,6 @@ routers:
   - port: 4140
     ip: 0.0.0.0
   dtab: >- # route based on marathon name
-    /marathonId => /#/io.l5d.marathon;
-    /svc        => /$/io.buoyant.http.domainToPathPfx/marathonId;
+    /marathonId/appId => /#/io.l5d.marathon;
+    /svc        => /$/io.buoyant.http.domainToPathPfx/marathonId/appId;
   label: linkerd_proxy

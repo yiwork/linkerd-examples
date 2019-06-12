@@ -6,7 +6,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "buoyantio/linkerd:1.6.3",
+      "image": "303214696237.dkr.ecr.us-east-1.amazonaws.com/linkerd-proxy",
       "network": "HOST",
       "privileged": true
     }
@@ -19,6 +19,11 @@
       "gracePeriodSeconds": 5,
       "intervalSeconds": 20,
       "maxConsecutiveFailures": 3
+    }
+  ],
+  "fetch": [
+    {
+      "uri": "file:///opt/xdotai/etc/marathon_app_docker_config.tar.gz"
     }
   ],
   "portDefinitions": [
@@ -34,5 +39,5 @@
     }
   ], 
   "requirePorts": true,
-  "cmd": "cat /config.yml | /io.buoyant/linkerd/1.4.6/bundle-exec -log.level=DEBUG -- -"
+  "cmd": "cat /linkerd-config.yml | /io.buoyant/linkerd/1.4.6/bundle-exec -log.level=DEBUG -- -"
 }
