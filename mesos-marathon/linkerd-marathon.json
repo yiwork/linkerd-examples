@@ -38,6 +38,5 @@
       "name": "proxy"
     }
   ], 
-  "requirePorts": true,
-  "cmd": "cat /linkerd-config.yml | /io.buoyant/linkerd/1.4.6/bundle-exec -log.level=DEBUG -- -"
+  "requirePorts": true
 }
