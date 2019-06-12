@@ -2,14 +2,13 @@
   "id": "linkerd",
   "instances": 1,
   "cpus": 0.25,
-  "mem": 32.0,
+  "mem": 512.0,
   "container": {
     "type": "DOCKER",
     "docker": {
       "image": "buoyantio/linkerd:1.6.3",
       "network": "HOST",
-      "privileged": true, 
-      "forcePullImage": true
+      "privileged": true
     }
   },
   "healthChecks": [
