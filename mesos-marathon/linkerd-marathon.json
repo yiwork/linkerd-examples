@@ -12,8 +12,8 @@
     }, 
     "volumes": [
       {
-        "containerPath": "/linkerd-config.yml",
-        "hostPath": "/opt/xdotai/etc/linkerd-config.yml",
+        "containerPath": "/opt/xdotai/etc",
+        "hostPath": "/opt/xdotai/etc",
         "mode": "RO"
       }
     ]
