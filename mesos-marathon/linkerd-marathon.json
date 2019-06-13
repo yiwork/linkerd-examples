@@ -9,7 +9,14 @@
       "image": "303214696237.dkr.ecr.us-east-1.amazonaws.com/linkerd-proxy",
       "network": "HOST",
       "privileged": true
-    }
+    }, 
+    "volumes": [
+      {
+        "containerPath": "/linkerd-config.yml",
+        "hostPath": "/opt/xdotai/etc/linkerd-config.yml",
+        "mode": "RO"
+      }
+    ]
   },
   "healthChecks": [
     {
