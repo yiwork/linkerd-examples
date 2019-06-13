@@ -23,6 +23,6 @@ routers:
   - port: 4140
     ip: 0.0.0.0
   dtab: >- # route based on marathon name
-    /marathonId/appId => /#/io.l5d.marathon;
+    /marathonId => /#/io.l5d.marathon;
     /svc        => /$/io.buoyant.http.domainToPathPfx/marathonId/appId;
   label: linkerd_proxy
